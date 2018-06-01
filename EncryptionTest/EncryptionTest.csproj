@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DotNetAES.cs" />
+    <Compile Include="DotNet\DotNetAES.cs" />
+    <Compile Include="DotNet\DotNetSHA2.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
