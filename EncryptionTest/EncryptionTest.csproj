@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DotNet\DotNetAES.cs" />
-    <Compile Include="DotNet\DotNetSHA2.cs" />
+    <Compile Include="DotNet\Hashing\DotNetMD5.cs" />
+    <Compile Include="DotNet\Symmetrical\DotNetAES.cs" />
+    <Compile Include="DotNet\Hashing\DotNetSHA2.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

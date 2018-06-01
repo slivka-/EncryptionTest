@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace EncryptionTest.DotNet
+namespace EncryptionTest.DotNet.Hashing
 {
     class DotNetSHA2
     {

@@ -1,7 +1,8 @@
 ﻿using System.Security.Cryptography;
 using System.IO;
 
-namespace EncryptionTest.DotNet
+namespace EncryptionTest.DotNet.Symmetrical
+
 {
     class DotNetAES
     {
