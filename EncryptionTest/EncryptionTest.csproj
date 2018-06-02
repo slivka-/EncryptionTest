@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BouncyCastle\Symmetrical\BCAES.cs" />
+    <Compile Include="BouncyCastle\Symmetrical\BCDES.cs" />
     <Compile Include="DotNet\Asymmetrical\DotNetECD.cs" />
     <Compile Include="DotNet\Asymmetrical\DotNetRSA.cs" />
     <Compile Include="DotNet\Hashing\DotNetMD5.cs" />

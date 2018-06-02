@@ -9,6 +9,7 @@ namespace EncryptionTest
             Console.WriteLine("Input message:");
             string inputString = Console.ReadLine();
 
+            #region SYMMETRICAL
             Console.WriteLine("=============================SYMMETRICAL==================================================");
             byte[] DotNetAESEncrypted = DotNet.Symmetrical.DotNetAES.Encrypt(inputString);
             Console.WriteLine(string.Format("Encrypted by .Net AES:\n{0}", DotNetAESEncrypted.ToStringUTF()));
@@ -31,9 +32,14 @@ namespace EncryptionTest
             Console.WriteLine(string.Format("Decrypted by Bouncy Castle AES:\n{0}", BCAESDEcrypted));
             Console.WriteLine("------------------------------------------------------------------------------------------");
 
+            byte[] BCDESEncrypted = BouncyCastle.Symmetrical.BCAES.Encrypt(inputString);
+            Console.WriteLine(string.Format("Encrypted by Bouncy Castle DES:\n{0}", BCDESEncrypted.ToStringUTF()));
 
+            string BCDESDEcrypted = BouncyCastle.Symmetrical.BCAES.Decrypt(BCAESEncrypted);
+            Console.WriteLine(string.Format("Decrypted by Bouncy Castle DES:\n{0}", BCDESDEcrypted));
+            
             Console.WriteLine();
-
+            #endregion
 
 
 

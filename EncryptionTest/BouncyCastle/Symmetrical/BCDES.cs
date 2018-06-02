@@ -6,7 +6,7 @@ using System;
 
 namespace EncryptionTest.BouncyCastle.Symmetrical
 {
-    class BCAES
+    class BCDES
     {
         private static PaddedBufferedBlockCipher cipher;
         private static ParametersWithIV keyParamWithIV;
@@ -39,7 +39,7 @@ namespace EncryptionTest.BouncyCastle.Symmetrical
         {
             if (cipher == null || keyParamWithIV == null)
             {
-                AesEngine engine = new AesEngine();
+                DesEngine engine = new DesEngine();
                 CbcBlockCipher blockCipher = new CbcBlockCipher(engine);
                 cipher = new PaddedBufferedBlockCipher(blockCipher);
                 KeyParameter keyParam = new KeyParameter(GenerateArray(32));
