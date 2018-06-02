@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DotNet\Asymmetrical\DotNetRSA.cs" />
     <Compile Include="DotNet\Hashing\DotNetMD5.cs" />
     <Compile Include="DotNet\Symmetrical\DotNetAES.cs" />
     <Compile Include="DotNet\Hashing\DotNetSHA2.cs" />
@@ -53,5 +54,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
