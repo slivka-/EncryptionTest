@@ -88,7 +88,8 @@ namespace EncryptionTest
             var DotNetSignature = DotNet.Signature.DotNetECDsa.SignMessage(inputString);
             Console.WriteLine(string.Format("Digital Signature check by .Net:\n{0}", DotNet.Signature.DotNetECDsa.CheckMessage(DotNetSignature)));
             Console.WriteLine("------------------------------------------------------------------------------------------");
-
+            var BCSignature = BouncyCastle.Signature.BCECDsa.SignMessage(inputString);
+            Console.WriteLine(string.Format("Digital Signature check by Bouncy Castle:\n{0}", BouncyCastle.Signature.BCECDsa.CheckMessage(BCSignature)));
             #endregion
 
             Console.ReadLine();

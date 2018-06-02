@@ -49,6 +49,7 @@
     <Compile Include="BouncyCastle\Asymmetrical\BCRSA.cs" />
     <Compile Include="BouncyCastle\Hashing\BCMD5.cs" />
     <Compile Include="BouncyCastle\Hashing\BCSHA2.cs" />
+    <Compile Include="BouncyCastle\Signature\BCECDsa.cs" />
     <Compile Include="BouncyCastle\Symmetrical\BCAES.cs" />
     <Compile Include="BouncyCastle\Symmetrical\BCDES.cs" />
     <Compile Include="DotNet\Asymmetrical\DotNetECD.cs" />
@@ -66,8 +67,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BouncyCastle\Signature\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
