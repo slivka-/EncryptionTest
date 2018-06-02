@@ -45,6 +45,7 @@
     <Compile Include="DotNet\Asymmetrical\DotNetECD.cs" />
     <Compile Include="DotNet\Asymmetrical\DotNetRSA.cs" />
     <Compile Include="DotNet\Hashing\DotNetMD5.cs" />
+    <Compile Include="DotNet\Signature\DotNetECDsa.cs" />
     <Compile Include="DotNet\Symmetrical\DotNetAES.cs" />
     <Compile Include="DotNet\Hashing\DotNetSHA2.cs" />
     <Compile Include="DotNet\Symmetrical\DotNetTripleDES.cs" />

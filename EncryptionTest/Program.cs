@@ -47,6 +47,10 @@ namespace EncryptionTest
             Console.WriteLine(string.Format("MD5 by .Net:\n{0}", DotNet.Hashing.DotNetMD5.GetHash(inputString)));
             Console.WriteLine();
 
+            Console.WriteLine("=============================DIGITAL SIGNATURE============================================");
+            var DotNetSignature = DotNet.Signature.DotNetECDsa.SignMessage(inputString);
+            Console.WriteLine(string.Format("Digital Signature check by .Net:\n{0}", DotNet.Signature.DotNetECDsa.CheckMessage(DotNetSignature)));
+
             Console.ReadLine();
         }
     }
