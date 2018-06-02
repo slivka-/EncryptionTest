@@ -32,17 +32,16 @@ namespace EncryptionTest
             Console.WriteLine(string.Format("Decrypted by Bouncy Castle AES:\n{0}", BCAESDEcrypted));
             Console.WriteLine("------------------------------------------------------------------------------------------");
 
-            byte[] BCDESEncrypted = BouncyCastle.Symmetrical.BCAES.Encrypt(inputString);
+            byte[] BCDESEncrypted = BouncyCastle.Symmetrical.BCDES.Encrypt(inputString);
             Console.WriteLine(string.Format("Encrypted by Bouncy Castle DES:\n{0}", BCDESEncrypted.ToStringUTF()));
 
-            string BCDESDEcrypted = BouncyCastle.Symmetrical.BCAES.Decrypt(BCAESEncrypted);
+            string BCDESDEcrypted = BouncyCastle.Symmetrical.BCDES.Decrypt(BCDESEncrypted);
             Console.WriteLine(string.Format("Decrypted by Bouncy Castle DES:\n{0}", BCDESDEcrypted));
             
             Console.WriteLine();
             #endregion
 
-
-
+            #region ASYMMETRICAL
             Console.WriteLine("=============================ASYMMETRICAL=================================================");
             byte[] DotNetRSAEncrypted = DotNet.Asymmetrical.DotNetRSA.Encrypt(inputString);
             Console.WriteLine(string.Format("Encrypted by .Net RSA:\n{0}", DotNetRSAEncrypted.ToStringUTF()));
@@ -56,7 +55,18 @@ namespace EncryptionTest
 
             string DotNetECDDecrypted = DotNet.Asymmetrical.DotNetECD.Decrypt(DotNetECDEncrypted);
             Console.WriteLine(string.Format("Decrypted by .Net ECD:\n{0}", DotNetECDDecrypted));
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+
+            byte[] BCRSAEncrypted = BouncyCastle.Asymmetrical.BCRSA.Encrypt(inputString);
+            Console.WriteLine(string.Format("Encrypted by Bouncy Castle RSA:\n{0}", BCRSAEncrypted.ToStringUTF()));
+
+            string BCRSADecrypted = BouncyCastle.Asymmetrical.BCRSA.Decrypt(BCRSAEncrypted);
+            Console.WriteLine(string.Format("Decrypted by Bouncy Castle RSA:\n{0}", BCRSADecrypted));
             Console.WriteLine();
+
+
+
+            #endregion
 
             Console.WriteLine("=============================HASHING======================================================");
             Console.WriteLine(string.Format("SHA265 by .Net:\n{0}", DotNet.Hashing.DotNetSHA2.GetHash(inputString)));

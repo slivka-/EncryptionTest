@@ -2,7 +2,7 @@
 using Org.BouncyCastle.Crypto.Modes;
 using Org.BouncyCastle.Crypto.Paddings;
 using Org.BouncyCastle.Crypto.Parameters;
-using System;
+using Org.BouncyCastle.Security;
 
 namespace EncryptionTest.BouncyCastle.Symmetrical
 {
@@ -42,14 +42,14 @@ namespace EncryptionTest.BouncyCastle.Symmetrical
                 DesEngine engine = new DesEngine();
                 CbcBlockCipher blockCipher = new CbcBlockCipher(engine);
                 cipher = new PaddedBufferedBlockCipher(blockCipher);
-                KeyParameter keyParam = new KeyParameter(GenerateArray(32));
-                keyParamWithIV = new ParametersWithIV(keyParam, GenerateArray(16), 0, 16);
+                KeyParameter keyParam = new KeyParameter(GenerateArray(21));
+                keyParamWithIV = new ParametersWithIV(keyParam, GenerateArray(8), 0, 8);
             }
         }
 
         private static byte[] GenerateArray(int length)
         {
-            Random rnd = new Random();
+            SecureRandom rnd = new SecureRandom();
             byte[] output = new byte[length];
             for (int i = 0; i < length; i++)
                 output[i] = (byte)(rnd.Next() % 256);

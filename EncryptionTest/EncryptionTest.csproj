@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BouncyCastle\Asymmetrical\BCRSA.cs" />
     <Compile Include="BouncyCastle\Symmetrical\BCAES.cs" />
     <Compile Include="BouncyCastle\Symmetrical\BCDES.cs" />
     <Compile Include="DotNet\Asymmetrical\DotNetECD.cs" />
@@ -63,7 +64,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BouncyCastle\Asymmetrical\" />
     <Folder Include="BouncyCastle\Hashing\" />
     <Folder Include="BouncyCastle\Signature\" />
   </ItemGroup>
