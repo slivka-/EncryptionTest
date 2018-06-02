@@ -33,11 +33,11 @@ namespace EncryptionTest
             Console.WriteLine(string.Format("Decrypted by .Net RSA:\n{0}", DotNetRSADecrypted));
             Console.WriteLine("------------------------------------------------------------------------------------------");
 
-            //byte[] DotNetDESEncrypted = DotNet.Symmetrical.DotNetTripleDES.Encrypt(inputString);
-            //Console.WriteLine(string.Format("Encrypted by .Net DES:\n{0}", DotNetDESEncrypted.ToStringUTF()));
+            byte[] DotNetECDEncrypted = DotNet.Asymmetrical.DotNetECD.Encrypt(inputString);
+            Console.WriteLine(string.Format("Encrypted by .Net ECD:\n{0}", DotNetECDEncrypted.ToStringUTF()));
 
-            //string DotNetDESDecrypted = DotNet.Symmetrical.DotNetTripleDES.Decrypt(DotNetDESEncrypted);
-            //Console.WriteLine(string.Format("Decrypted by .Net DES:\n{0}", DotNetDESDecrypted));
+            string DotNetECDDecrypted = DotNet.Asymmetrical.DotNetECD.Decrypt(DotNetECDEncrypted);
+            Console.WriteLine(string.Format("Decrypted by .Net ECD:\n{0}", DotNetECDDecrypted));
             Console.WriteLine();
 
             Console.WriteLine("=============================HASHING======================================================");
