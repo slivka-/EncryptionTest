@@ -4,7 +4,6 @@ namespace EncryptionTest
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             Console.WriteLine("Input message:");
@@ -23,7 +22,20 @@ namespace EncryptionTest
 
             string DotNetDESDecrypted = DotNet.Symmetrical.DotNetTripleDES.Decrypt(DotNetDESEncrypted);
             Console.WriteLine(string.Format("Decrypted by .Net DES:\n{0}", DotNetDESDecrypted));
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+
+            byte[] BCAESEncrypted = BouncyCastle.Symmetrical.BCAES.Encrypt(inputString);
+            Console.WriteLine(string.Format("Encrypted by Bouncy Castle AES:\n{0}", BCAESEncrypted.ToStringUTF()));
+
+            string BCAESDEcrypted = BouncyCastle.Symmetrical.BCAES.Decrypt(BCAESEncrypted);
+            Console.WriteLine(string.Format("Decrypted by Bouncy Castle AES:\n{0}", BCAESDEcrypted));
+            Console.WriteLine("------------------------------------------------------------------------------------------");
+
+
             Console.WriteLine();
+
+
+
 
             Console.WriteLine("=============================ASYMMETRICAL=================================================");
             byte[] DotNetRSAEncrypted = DotNet.Asymmetrical.DotNetRSA.Encrypt(inputString);

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BouncyCastle\Symmetrical\BCAES.cs" />
     <Compile Include="DotNet\Asymmetrical\DotNetECD.cs" />
     <Compile Include="DotNet\Asymmetrical\DotNetRSA.cs" />
     <Compile Include="DotNet\Hashing\DotNetMD5.cs" />
@@ -55,7 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BouncyCastle\Asymmetrical\" />
+    <Folder Include="BouncyCastle\Hashing\" />
+    <Folder Include="BouncyCastle\Signature\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
